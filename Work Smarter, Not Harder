@@ -1,0 +1,33 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t-->0){
+		    double l = sc.nextDouble();
+		    int v1 = sc.nextInt(); // tor
+		    int v2 = sc.nextInt(); // hare
+		    int tor = (int)Math.ceil(l/v1);
+		    int hare = (int)Math.ceil(l/v2);
+		    if(tor==hare){
+		        System.out.println(-1);
+		    }
+		  //  if(l%v1==0 && l%v2==0){
+		  //      System.out.println((tor-hare)-1);
+		        
+		        
+		  //  }
+		    else{
+		        System.out.println((tor-hare)-1);
+		    }
+		}
+	}
+}
