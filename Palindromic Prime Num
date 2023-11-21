@@ -1,0 +1,24 @@
+# cook your dish here
+def primes(n):
+    prime = [True for _ in range(n+1)]
+    lol = 2
+    while lol * lol <= n:
+        if prime[lol] == True:
+            for i in range(lol * lol, n+1, lol):
+                prime[i] = False
+        lol += 1
+    return prime
+
+def is_palindrome(num):
+    return str(num) == str(num)[::-1]
+
+pop = 10**5
+prime = primes(pop)
+prime_palindromes = [i for i in range(2, pop) if prime[i] and is_palindrome(i)]
+
+t = int(input())
+for _ in range(t):
+    pop = int(input())
+    even = sum(1 for i in prime_palindromes[:pop] if len(str(i)) % 2 == 0)
+    odd = pop - even
+    print(even, odd)
