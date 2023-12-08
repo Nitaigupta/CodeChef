@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    static boolean isVowel(char ch) {
+        return "AEIOU".indexOf(ch) != -1;
+    }
+
+    static String canReachCodetown(String s) {
+        String codetown = "CODETOWN";
+        for (int i = 0; i < s.length(); i++) {
+            char c11 = s.charAt(i);
+            char c22 = codetown.charAt(i);
+
+            if ((isVowel(c11) && !isVowel(c22)) || (!isVowel(c11) && isVowel(c22))) {
+                return "NO";
+            }
+        }
+        return "YES";
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+       
+        int t = scanner.nextInt();
+
+        scanner.nextLine(); // Uses a newline character after reading an integer
+
+        for (int i = 0; i < t; i++) {
+            
+            String s = scanner.nextLine().trim();
+
+            String result = canReachCodetown(s);
+            System.out.println(result);
+        }
+    }
+}
